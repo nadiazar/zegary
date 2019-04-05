@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>zegary</title>
+    <style>
+        body {
+            background-color: dimgrey;
+            background-image: url(https://static.cdprojektred.com/playgwent.com/news/small/playgwent.com_en_1519728482_5a953762d50521.82876001.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #container {
+            background-color: darkslategray;
+            margin: auto;
+            width: 1200px;
+            border: 2px solid black;
+            text-align: center;
+            height: 90vh;
+
+        }
+
+        #zegar,
+        #do1,
+        #do2 {
+            padding: 20px;
+            width: 200px;
+            box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.4);
+            margin: auto;
+            margin-top: 30px;
+
+
+        }
+
+        section {
+            float: left;
+            width: 50%;
+        }
+
+        footer {
+            margin: 20px;
+            background-color: darkslateblue;
+            padding: 20px;
+            width: 83vw;
+            position: absolute;
+            bottom: 50px;
+            clear: both;
+        }
+
+        header {
+
+            background-color: dimgrey;
+
+        }
+
+    </style>
+    <script>
+        let data1 = new Date(2019, 8, 09, 18, 0, 0);
+        let data2 = new Date(2019, 5, 21, 9, 0, 0);
+        let data3 = new Date(2077, 0, 1, 9, 0, 0);
+
+
+
+        function ileZostalo(dataK, id) {
+            let dzis = new Date();
+            let doDaty = dataK - dzis;
+            let s = doDaty / 1000;
+            let min = s / 60;
+            let h = min / 60;
+            let d = h / 24;
+
+
+
+            let ss = Math.floor(s % 60);
+            let mm = Math.floor(min % 60);
+            let hh = Math.floor(h % 24);
+            let dd = Math.floor(d);
+            document.getElementById(id).innerHTML = dd + " : " + hh + " : " + mm + " : " + ss;
+
+
+
+        }
+
+        function ileZostao(dataK, id) {
+            let dzis = new Date();
+            let doDaty = dataK - dzis;
+            let s = doDaty / 1000;
+            let min = s / 60;
+            let h = min / 60;
+            let d = h / 24;
+
+
+
+            let ss = Math.floor(s % 60);
+            let mm = Math.floor(min % 60);
+            let hh = Math.floor(h % 24);
+            let dd = Math.floor(d);
+            document.getElementById(id).innerHTML = dd + " : " + hh + " : " + mm + " : " + ss;
+
+
+
+        }
+
+        function odliczanie() {
+
+            let dzis = new Date();
+            let hour = dzis.getHours();
+            let dzien = dzis.getDate();
+            let mc = dzis.getMonth() + 1;
+            let rok = dzis.getFullYear();
+            let min = dzis.getMinutes();
+            let mm = dzis.getMilliseconds();
+            let secs = dzis.getSeconds();
+
+
+
+
+
+            document.getElementById("zegar").innerHTML = dzien + "/" + mc + "/" + rok + " ♥ " + hour + ":  " + min + ":" + secs + ":" + mm + "  ";
+
+            ileZostalo(data1, "do1");
+            ileZostalo(data2, "do2");
+            ileZostao(data3, "do3");
+
+            setTimeout("odliczanie()", 1)
+
+        }
+
+    </script>
+</head>
+
+<body onload="odliczanie();">
+    <div id="container">
+        <header>
+            <h1>
+                z̴̝̀̀ͅẹ̶̡̡̖̘͉̫̋̃͂̓͑͆͘͝ͅg̸͉͔͋͗͊̆͐͒̀a̶̢̦̗̥̥̝̜̖̜̒̊r̷̢̳̯̣͇̺̪̭̊͂̌̐̓́̋͌̒͝ỹ̶͚̻͇̱̣̳
+                z⃣   e⃣   g⃣   a⃣   r⃣   y⃣ 🐼😈 ｚⒺgᵃℝ𝔂 ✊♪ ▀▄▀▄▀▄ 𝔃Ⓔقᗩ尺ү ▄▀▄▀▄▀ ｚeｇaｒy
+            </h1>
+            <div id="zegar"></div>
+        </header>
+        <section>
+
+            <div id="do1"></div>
+        </section>
+        <section>
+            <div id="do2"> </div>
+
+        </section>
+        <section>
+            <div id="do3"> </div>
+
+        </section>
+        <footer>
+            &copy;lol
+        </footer>
+
+    </div>
+</body>
+
+</html>
